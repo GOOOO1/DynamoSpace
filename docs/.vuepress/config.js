@@ -1,7 +1,8 @@
+
+
 module.exports = {
     //base: '/DynamoSpace/',
     title: "Dynamo",
-    //description: '相当于一个我(Dynamo)的个人空间，分享一些计算机知识或者其他的内容',
     head: [
         ['meta', { name: 'author', content: '满满Dynamo'}],
         ['meta', { name: '联系方式', content: 'QQ:2970513337,wx:y19986209969'}],
@@ -14,7 +15,6 @@ module.exports = {
         smoothScroll: true, // 页面滚动
         nav: [
             { text: 'Home', link: '/'},
-            //{ text: 'Computer', link: '/computer/'},
             { // 计算机下拉列表
                 text: 'Computer',
                 ariaLabel: '计算机',
