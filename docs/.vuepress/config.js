@@ -1,4 +1,5 @@
 module.exports = {
+    base: '/DynamoSpace/',
     title: "Dynamo",
     //description: '相当于一个我(Dynamo)的个人空间，分享一些计算机知识或者其他的内容',
     head: [
