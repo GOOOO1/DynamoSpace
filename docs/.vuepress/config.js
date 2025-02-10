@@ -2,7 +2,7 @@
 
 module.exports = {
     //base: '/DynamoSpace/',
-    title: "Dynamo",
+    title: "满满Dynamo",
     head: [
         ['meta', { name: 'author', content: '满满Dynamo'}],
         ['meta', { name: '联系方式', content: 'QQ:2970513337,wx:y19986209969'}],
@@ -20,7 +20,7 @@ module.exports = {
                 ariaLabel: '计算机',
                 items: [
                     { text: 'C++', link: '/computer/cpp/'},
-                    { text: '数据结构', link: '/computer/data-structure.html'},
+                    { text: '数据结构', link: '/computer/data-structure/'},
                 ]
             },
         ],
@@ -50,14 +50,17 @@ module.exports = {
                     ]
                 }
             ],
-            '/computer/data-structure.html': [
+            '/computer/data-structure/': [
                 {
                     title: '数据结构',
-                    path: '/computer/data-structure.html',
+                    path: '/computer/data-structure/',
                     collapsable: false,
                     sidebarDepth: 1,
+                    children: [
+                        '/computer/data-structure/note.html',
+                    ]
                 }
-            ]
+            ],
         },
 
     }
