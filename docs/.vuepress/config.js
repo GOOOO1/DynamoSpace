@@ -20,6 +20,7 @@ module.exports = {
                 ariaLabel: '计算机',
                 items: [
                     { text: 'C++', link: '/computer/cpp/'},
+                    { text: '数据结构', link: '/computer/data-structure.html'},
                 ]
             },
         ],
@@ -47,6 +48,14 @@ module.exports = {
                         '/computer/cpp/13.html',
                         '/computer/cpp/14.html',
                     ]
+                }
+            ],
+            '/computer/data-structure.html': [
+                {
+                    title: '数据结构',
+                    path: '/computer/data-structure.html',
+                    collapsable: false,
+                    sidebarDepth: 1,
                 }
             ]
         },
