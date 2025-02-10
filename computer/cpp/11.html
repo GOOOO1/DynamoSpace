@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>继承 | 满满Dynamo</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/img/chong.png">
+    <meta name="description" content="">
+    <meta name="author" content="满满Dynamo">
+    <meta name="联系方式" content="QQ:2970513337,wx:y19986209969">
+    
+    <link rel="preload" href="/assets/css/0.styles.6b880b11.css" as="style"><link rel="preload" href="/assets/js/app.08520993.js" as="script"><link rel="preload" href="/assets/js/2.af4697f0.js" as="script"><link rel="preload" href="/assets/js/1.f36702a6.js" as="script"><link rel="preload" href="/assets/js/34.11fb6233.js" as="script"><link rel="prefetch" href="/assets/js/10.e1917f68.js"><link rel="prefetch" href="/assets/js/11.a999022f.js"><link rel="prefetch" href="/assets/js/12.2be00cb7.js"><link rel="prefetch" href="/assets/js/13.c2dac5cb.js"><link rel="prefetch" href="/assets/js/14.092e54e0.js"><link rel="prefetch" href="/assets/js/15.6d428fe8.js"><link rel="prefetch" href="/assets/js/16.fc3e1f4e.js"><link rel="prefetch" href="/assets/js/17.f35ec243.js"><link rel="prefetch" href="/assets/js/18.d56f3b61.js"><link rel="prefetch" href="/assets/js/19.8234c915.js"><link rel="prefetch" href="/assets/js/20.ae57369b.js"><link rel="prefetch" href="/assets/js/21.03fca9ee.js"><link rel="prefetch" href="/assets/js/22.5f40279d.js"><link rel="prefetch" href="/assets/js/23.e3e79d10.js"><link rel="prefetch" href="/assets/js/24.050be622.js"><link rel="prefetch" href="/assets/js/25.e91dc3c6.js"><link rel="prefetch" href="/assets/js/26.0e6a711e.js"><link rel="prefetch" href="/assets/js/27.ed057b5c.js"><link rel="prefetch" href="/assets/js/28.d57c802f.js"><link rel="prefetch" href="/assets/js/29.fffb8338.js"><link rel="prefetch" href="/assets/js/3.75f0303f.js"><link rel="prefetch" href="/assets/js/30.cd43279d.js"><link rel="prefetch" href="/assets/js/31.79cd2598.js"><link rel="prefetch" href="/assets/js/32.03cc3bea.js"><link rel="prefetch" href="/assets/js/33.633bc995.js"><link rel="prefetch" href="/assets/js/35.7517a6af.js"><link rel="prefetch" href="/assets/js/36.fecb710e.js"><link rel="prefetch" href="/assets/js/37.db3d0e11.js"><link rel="prefetch" href="/assets/js/38.428aae41.js"><link rel="prefetch" href="/assets/js/39.1c6048fd.js"><link rel="prefetch" href="/assets/js/4.d18ce1d1.js"><link rel="prefetch" href="/assets/js/40.f8184bea.js"><link rel="prefetch" href="/assets/js/5.7bc70203.js"><link rel="prefetch" href="/assets/js/6.8b1ec057.js"><link rel="prefetch" href="/assets/js/7.ba313ad7.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.1f6d7e80.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6b880b11.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/chong.png" alt="满满Dynamo" class="logo"> <span class="site-name can-hide">满满Dynamo</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机" class="dropdown-title"><span class="title">Computer</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机" class="mobile-dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/computer/cpp/" class="nav-link router-link-active">
+  C++
+</a></li><li class="dropdown-item"><!----> <a href="/computer/data-structure/" class="nav-link">
+  数据结构
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机" class="dropdown-title"><span class="title">Computer</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机" class="mobile-dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/computer/cpp/" class="nav-link router-link-active">
+  C++
+</a></li><li class="dropdown-item"><!----> <a href="/computer/data-structure/" class="nav-link">
+  数据结构
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/computer/cpp/" class="sidebar-heading clickable router-link-active open"><span>C++</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/computer/cpp/01.html" class="sidebar-link">引用</a></li><li><a href="/computer/cpp/02.html" class="sidebar-link">函数</a></li><li><a href="/computer/cpp/03.html" class="sidebar-link">异常处理机制</a></li><li><a href="/computer/cpp/04.html" class="sidebar-link">类和对象</a></li><li><a href="/computer/cpp/05.html" class="sidebar-link">模板</a></li><li><a href="/computer/cpp/06.html" class="sidebar-link">new和delete</a></li><li><a href="/computer/cpp/07.html" class="sidebar-link">this指针</a></li><li><a href="/computer/cpp/08.html" class="sidebar-link">const关键字</a></li><li><a href="/computer/cpp/09.html" class="sidebar-link">static</a></li><li><a href="/computer/cpp/10.html" class="sidebar-link">运算符重载</a></li><li><a href="/computer/cpp/11.html" aria-current="page" class="active sidebar-link">继承</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/computer/cpp/11.html#_1-单继承" class="sidebar-link">1. 单继承</a></li><li class="sidebar-sub-header"><a href="/computer/cpp/11.html#_2-基类成员在派生类中的访问权限" class="sidebar-link">2. 基类成员在派生类中的访问权限</a></li><li class="sidebar-sub-header"><a href="/computer/cpp/11.html#_3-继承机制下的构造函数与析构函数" class="sidebar-link">3. 继承机制下的构造函数与析构函数</a></li><li class="sidebar-sub-header"><a href="/computer/cpp/11.html#_4-多继承" class="sidebar-link">4. 多继承</a></li><li class="sidebar-sub-header"><a href="/computer/cpp/11.html#_5-虚基类和赋值兼容规则" class="sidebar-link">5. 虚基类和赋值兼容规则</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/computer/cpp/11.html#_1-成员名限定法" class="sidebar-link">（1）成员名限定法</a></li><li class="sidebar-sub-header"><a href="/computer/cpp/11.html#_2-虚基类" class="sidebar-link">（2）虚基类</a></li><li class="sidebar-sub-header"><a href="/computer/cpp/11.html#_3-赋值兼容规则" class="sidebar-link">（3）赋值兼容规则</a></li></ul></li></ul></li><li><a href="/computer/cpp/12.html" class="sidebar-link">虚函数与多态性</a></li><li><a href="/computer/cpp/13.html" class="sidebar-link">标准模板库（STL）</a></li><li><a href="/computer/cpp/14.html" class="sidebar-link">文件流</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="十一-继承"><a href="#十一-继承" class="header-anchor">#</a> 十一. 继承</h1> <blockquote><p>继承是指在<strong>已有类</strong>的或称为<strong>基类</strong>的基础上创建新类，这个类就是<strong>派生类</strong></p> <p><u>派生类自动包含了基类的成员，包括所有的数据和操作，而且它还可以增加自身的新成员</u></p> <p>派生类是基类，基类有派生类</p> <p>能实现代码复用，减轻负担，更有效地管理类，维护类，以及扩展新的类</p></blockquote> <h2 id="_1-单继承"><a href="#_1-单继承" class="header-anchor">#</a> 1. 单继承</h2> <p><strong>声明格式：</strong><code>class 派生类名：继承方式 基类名</code>      //继承方式：public,protected,private都可，<u>如果缺省不写，默认为private</u></p> <p>​                    <code>{ 派生类成员声明 };</code></p> <p><strong>如</strong>：</p> <div class="language-cpp extra-class"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Person</span>     <span class="token comment">//基类</span>
+<span class="token punctuation">{</span>
+    string name<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">void</span> <span class="token function">set_Person</span><span class="token punctuation">(</span>string s<span class="token punctuation">,</span><span class="token keyword">int</span> a<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        name <span class="token operator">=</span> s<span class="token punctuation">;</span>
+        age <span class="token operator">=</span> a<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;name:&quot;</span><span class="token operator">&lt;&lt;</span>name<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;age:&quot;</span><span class="token operator">&lt;&lt;</span>age<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Student</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Person</span>   <span class="token comment">//派生类，自动继承基类的数据成员和成员函数</span></span> 
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> grade<span class="token punctuation">;</span>     <span class="token comment">//新增数据成员</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">void</span> <span class="token function">setStudent</span><span class="token punctuation">(</span>string n<span class="token punctuation">,</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> g<span class="token punctuation">)</span>  <span class="token comment">//新增成员函数</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">set_Person</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//调用基类中的成员函数</span>
+        grade <span class="token operator">=</span> g<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Student s<span class="token punctuation">;</span><span class="token comment">//此对象s为基类Person的派生类Student的对象，可以调用两个类中的成员</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_2-基类成员在派生类中的访问权限"><a href="#_2-基类成员在派生类中的访问权限" class="header-anchor">#</a> 2. 基类成员在派生类中的访问权限</h2> <blockquote><p>能继承不等于能访问</p></blockquote> <table><thead><tr><th style="text-align:center;">在基类中的访问属性</th> <th style="text-align:center;">继承方式</th> <th style="text-align:center;">在派生类中的访问属性</th></tr></thead> <tbody><tr><td style="text-align:center;">private</td> <td style="text-align:center;">public</td> <td style="text-align:center;">不可直接访问</td></tr> <tr><td style="text-align:center;">private</td> <td style="text-align:center;">private</td> <td style="text-align:center;">不可直接访问</td></tr> <tr><td style="text-align:center;">private</td> <td style="text-align:center;">protected</td> <td style="text-align:center;">不可直接访问</td></tr> <tr><td style="text-align:center;">public</td> <td style="text-align:center;">public</td> <td style="text-align:center;">public</td></tr> <tr><td style="text-align:center;">public</td> <td style="text-align:center;">private</td> <td style="text-align:center;">private</td></tr> <tr><td style="text-align:center;">public</td> <td style="text-align:center;">protected</td> <td style="text-align:center;">protected</td></tr> <tr><td style="text-align:center;">protected</td> <td style="text-align:center;">public</td> <td style="text-align:center;">protected</td></tr> <tr><td style="text-align:center;">protected</td> <td style="text-align:center;">private</td> <td style="text-align:center;">private</td></tr> <tr><td style="text-align:center;">protected</td> <td style="text-align:center;">protected</td> <td style="text-align:center;">protected</td></tr></tbody></table> <p><strong>public &gt; protected &gt; private &gt; 不可直接访问</strong></p> <h2 id="_3-继承机制下的构造函数与析构函数"><a href="#_3-继承机制下的构造函数与析构函数" class="header-anchor">#</a> 3. 继承机制下的构造函数与析构函数</h2> <ul><li>在继承机制中，<u>基类的构造函数与析构函数是<strong>不能</strong>被继承的</u></li> <li>派生类的构造函数负责对<u>来自基类</u>数据成员和新增加的数据成员<u>进行初始化</u></li> <li>所以，<u>在执行派生类的构造函数时，需要调用基类的构造函数，并提供基类构造函数所需的参数</u></li></ul> <p><strong>基类中不能被继承的函数</strong></p> <ol><li>构造函数、析构函数、拷贝构造函数、赋值运算符函数</li> <li>友元函数</li> <li>运算符函数</li> <li>静态成员函数</li></ol> <p><strong>派生类<u>构造函数</u>执行顺序</strong>：</p> <ol><li><u>基类</u>的构造函数</li> <li><u>对象成员</u>（即数据成员的类型是自己定义的类，此数据成员为该类的对象）的构造函数（如果有的话），有多个时按声明的顺序</li> <li><u>派生类</u>的构造函数</li></ol> <p><strong>派生类<u>析构函数</u>执行顺序</strong>：</p> <p>与构造函数相反</p> <p><strong>例</strong>：</p> <div class="language-cpp extra-class"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">A</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span> 
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Construct A\n&quot;</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>
+    <span class="token keyword">virtual</span> <span class="token operator">~</span><span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//虚析构函数</span>
+    <span class="token punctuation">{</span> 
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Destory A\n&quot;</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">B1</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">virtual</span> <span class="token keyword">public</span> <span class="token class-name">A</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">B1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Construct B1\n&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">~</span><span class="token function">B1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">override</span> <span class="token comment">// 重写析构函数</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Destory B1\n&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">B2</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">virtual</span> <span class="token keyword">public</span> <span class="token class-name">A</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">B2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Construct B2\n&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">~</span><span class="token function">B1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">override</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Destory B2\n&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">C</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">B2</span><span class="token punctuation">,</span><span class="token keyword">public</span> <span class="token class-name">B1</span>  <span class="token comment">//继承B2，B1</span></span>
+<span class="token punctuation">{</span>
+    <span class="token function">C</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">B1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">B2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">//先调用B1的构造函数，再调用B2的构造函数   </span>
+                        <span class="token comment">//二次继承的类也要在构造函数初始化列表中写最开始的基类的构造函数</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Construct C\n&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">~</span><span class="token function">C</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">override</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Destory C\n&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    C c<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+输出结果：
+    Construct A
+    Construct B1<span class="token comment">//构造顺序与派生类对象构造时的调用顺序有关，与继承顺序无关</span>
+    Construct B2
+    Construct C
+    Destory C
+    Destory B2
+    Destory B1
+    Destory A
+</code></pre></div><ul><li><p><strong>定义<u>默认</u>构造函数</strong></p> <blockquote><p>如基类中定义了默认构造函数，且该默认构造函数<u>能够</u>完成派生类对象中基类成员的构造，<u>则</u>派生类构造函数<u>无需</u>显式调用基类构造函数，直接调用派生类构造函数即可</p></blockquote></li></ul> <p><strong>如</strong>：上上例中，如果在Person类和Student类中写默认构造函数（无参数的构造函数），并在函数中分别输出：“调用基类构造函数”，“调用派生类构造函数”，则在主函数中创建Student类对象s时，会依次输出：“调用基类构造函数”，“调用派生类构造函数”</p> <ul><li><p><strong>定义<u>有参</u>的构造函数</strong></p> <blockquote><p>若基类中定义了<u>有参</u>构造函数，则<u>必须</u>通过派生类的构造函数<u>显式</u>调用基类的构造函数，<u>向带参数的构造函数传递参数，</u><strong>这需要用到成员初始化列表</strong></p></blockquote></li></ul> <p>因此，<u>派生类的构造函数定义</u>的一般<strong>格式</strong>：</p> <p><code>派生类名（参数列表）：基类构造函数（参数列表1），子对象成员1（参数列表）. . .</code></p> <p><code>{ 派生类构造函数体 }</code></p> <div class="language-cpp extra-class"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Person</span>     <span class="token comment">//基类</span>
+<span class="token punctuation">{</span>
+    string name<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Person</span><span class="token punctuation">(</span>string s<span class="token punctuation">,</span><span class="token keyword">int</span> a<span class="token punctuation">)</span><span class="token comment">//Person带参数的构造函数</span>
+    <span class="token punctuation">{</span>
+        name <span class="token operator">=</span> s<span class="token punctuation">;</span>
+        age <span class="token operator">=</span> a<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;name:&quot;</span><span class="token operator">&lt;&lt;</span>name<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;age:&quot;</span><span class="token operator">&lt;&lt;</span>age<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Data</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> year<span class="token punctuation">,</span>month<span class="token punctuation">,</span>day<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Data</span><span class="token punctuation">(</span><span class="token keyword">int</span> y<span class="token punctuation">,</span><span class="token keyword">int</span> m<span class="token punctuation">,</span><span class="token keyword">int</span> d<span class="token punctuation">)</span><span class="token comment">//Data的构造函数</span>
+    <span class="token punctuation">{</span>
+        year <span class="token operator">=</span> y<span class="token punctuation">;</span>
+        month <span class="token operator">=</span> m<span class="token punctuation">;</span>
+        day <span class="token operator">=</span> d<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Student</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Person</span>   <span class="token comment">//派生类</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> grade<span class="token punctuation">;</span>     <span class="token comment">//新增数据成员</span>
+    <span class="token comment">//对象成员的声明</span>
+    Data entranceday<span class="token punctuation">;</span>
+    Data birthday<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token comment">//定义Student带参数的构造函数</span>
+    <span class="token function">Student</span><span class="token punctuation">(</span>string n<span class="token punctuation">,</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> g<span class="token punctuation">,</span><span class="token keyword">int</span> y1<span class="token punctuation">,</span><span class="token keyword">int</span> m1<span class="token punctuation">,</span><span class="token keyword">int</span> d1<span class="token punctuation">,</span><span class="token keyword">int</span> y2<span class="token punctuation">,</span><span class="token keyword">int</span> m2<span class="token punctuation">,</span><span class="token keyword">int</span> d2<span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">Person</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">entranceday</span><span class="token punctuation">(</span>y1<span class="token punctuation">,</span>m1<span class="token punctuation">,</span>d1<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">birthday</span><span class="token punctuation">(</span>y2<span class="token punctuation">,</span>m2<span class="token punctuation">,</span>d2<span class="token punctuation">)</span>  <span class="token comment">//对基类的成员初始化需要用到成员初始化列表,entranceday和birthday为子对象成员</span>
+    <span class="token punctuation">{</span>
+        grade <span class="token operator">=</span> g<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Student <span class="token function">s</span><span class="token punctuation">(</span><span class="token string">&quot;Tom&quot;</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">9.2012</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2005</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//构造函数调用顺序：Person带参数的构造函数，entranceday的构造函数，birthday的构造函数，Student带参数的构造函数。子对象成员的构造调用顺序与声明顺序有关，与初始化顺序无关</span>
+<span class="token comment">//析构顺序与其相反</span>
+</code></pre></div><ul><li>基类数据成员仍由基类完成其构造</li> <li>派生类负责调用基类的构造函数来完成上述过程</li> <li>每个派生类仅负责其直接基类的构造</li> <li>不同基类中有同名的成员，则在多重继承之后，派生类对该同名成员的访问存在冲突</li> <li><strong>成员名限定法</strong>：<code>派生类对象.基类的名字::同名的成员</code></li></ul> <h2 id="_4-多继承"><a href="#_4-多继承" class="header-anchor">#</a> 4. 多继承</h2> <p>多继承下派生类的<strong>声明格式</strong>：<code>class 派生类名：继承方式1 基类名1，继承方式2 基类名2 …</code>      //继承方式：public,protected,private都  可，<u>如果缺省不写，默认为private</u></p> <p>​                                                  <code>{ 派生类类体； };</code></p> <p><strong>如</strong>:</p> <div class="language-cpp extra-class"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Student</span>         <span class="token comment">//第一个基类</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">protected</span><span class="token operator">:</span>        <span class="token comment">//保护+公有=保护，可以访问</span>
+    string name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span><span class="token operator">:</span>
+    string ID<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> gender<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">STudent</span><span class="token punctuation">(</span>string name<span class="token punctuation">,</span>string ID<span class="token punctuation">,</span><span class="token keyword">char</span> gender<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token operator">-&gt;</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token operator">-&gt;</span>ID <span class="token operator">=</span> ID<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token operator">-&gt;</span>gender <span class="token operator">=</span> gender<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">showStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;name:&quot;</span><span class="token operator">&lt;&lt;</span>name<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;ID:&quot;</span><span class="token operator">&lt;&lt;</span>ID<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;gender:&quot;</span><span class="token operator">&lt;&lt;</span>gender<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Employee</span>           <span class="token comment">//第二个基类</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span><span class="token operator">:</span>
+    string name<span class="token punctuation">;</span>
+    <span class="token keyword">protected</span><span class="token operator">:</span>       <span class="token comment">//保护+公有=保护，可以访问</span>
+    string job<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Employee</span><span class="token punctuation">(</span>string name<span class="token punctuation">,</span>string job<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token operator">-&gt;</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token operator">-&gt;</span>job <span class="token operator">=</span> job<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">showEmployee</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;name:&quot;</span><span class="token operator">&lt;&lt;</span>name<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;job:&quot;</span><span class="token operator">&lt;&lt;</span>job<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">StudentHasJob</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token keyword">public</span> Student<span class="token punctuation">,</span><span class="token keyword">public</span> Employee         <span class="token comment">//继承了两个基类的派生类</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">StudentHasJob</span><span class="token punctuation">(</span>string name<span class="token punctuation">,</span>string Id<span class="token punctuation">,</span><span class="token keyword">char</span> gender<span class="token punctuation">,</span>string job<span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">Student</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>Id<span class="token punctuation">,</span>gender<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">Employee</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>job<span class="token punctuation">)</span>       <span class="token comment">//依次对基类进行初始化</span>
+    <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">showStudentHasJob</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">showStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span>jod<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    StudentHasJob <span class="token function">s</span><span class="token punctuation">(</span><span class="token string">&quot;Jack&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;230701&quot;</span><span class="token punctuation">,</span><span class="token char">'H'</span><span class="token punctuation">,</span><span class="token string">&quot;工程师&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s<span class="token punctuation">.</span><span class="token function">showStudentHasJob</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_5-虚基类和赋值兼容规则"><a href="#_5-虚基类和赋值兼容规则" class="header-anchor">#</a> 5. 虚基类和赋值兼容规则</h2> <h3 id="_1-成员名限定法"><a href="#_1-成员名限定法" class="header-anchor">#</a> （1）成员名限定法</h3> <p>在子类的函数中调用父类同名函数，需要在调用的父类函数前加<code>父类名::</code>，注意是“ : : ”</p> <p><strong>如</strong>:（利用上例）</p> <div class="language-cpp extra-class"><pre class="language-cpp"><code><span class="token comment">//只将StudentHasJob类中的showStudentHasJob()函数修改</span>
+<span class="token keyword">void</span> <span class="token function">showStudentHasJob</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">//? cout&lt;&lt;name;   //此方法不行，因为Student类中和Employee类中均有name数据成员，会造成二义性，不知道访问哪个</span>
+    cout<span class="token operator">&lt;&lt;</span>Student<span class="token double-colon punctuation">::</span>name<span class="token punctuation">;</span>    <span class="token comment">//运用成员名限定法，正确</span>
+    <span class="token function">showStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span>jod<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="_2-虚基类"><a href="#_2-虚基类" class="header-anchor">#</a> （2）虚基类</h3> <p>定义虚基类的<strong>格式</strong>：class  派生类名：<code>virtual 继承方式 基类名称</code></p> <p>​                                   <code>{ … … };</code></p> <ul><li><p><u>所有从虚基类<strong>直接或间接</strong>派生的类<strong>必须</strong>在该类构造函数的<strong>成员初始化列表</strong>列出对虚基类构造函数的调用</u>，<u>但是只有实际构造对象的类的构造函数才会引发对虚基类构造函数的调用</u>，而其他基类在成员初始化列表中对虚基类构造函数的调用都会被忽略，从而保证了派生类对象中虚基类成员只会被初始化一次</p></li> <li><p>若某类构造函数的成员初始化列表中同时列出对虚基类构造函数和非虚基类构造函数的调用，则会<u>优先执行虚基类的构造函数</u></p> <p><strong>例1</strong>:</p></li></ul> <div class="language-cpp extra-class"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Person</span>           <span class="token comment">//基类</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span><span class="token operator">:</span>
+    string name<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Person</span><span class="token punctuation">(</span>string name<span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token operator">-&gt;</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token operator">-&gt;</span>age <span class="token operator">=</span> n<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Person的构造函数&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>   <span class="token comment">//在构造函数中添加输出语句，方便查看调用顺序</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">showPerson</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;name:&quot;</span><span class="token operator">&lt;&lt;</span>name<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;age:&quot;</span><span class="token operator">&lt;&lt;</span>age<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Student</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Person</span>         <span class="token comment">//基类,继承Person</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span><span class="token operator">:</span>
+    <span class="token keyword">char</span> gender<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Student</span><span class="token punctuation">(</span>string name<span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">,</span><span class="token keyword">char</span> gender<span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>age<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token operator">-&gt;</span>gender <span class="token operator">=</span> gender<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Student的构造函数&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">showStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">showPerson</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;gender:&quot;</span><span class="token operator">&lt;&lt;</span>gender<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Employee</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Person</span>           <span class="token comment">//基类，继承Person</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span><span class="token operator">:</span>
+    string job<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Employee</span><span class="token punctuation">(</span>string name<span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">,</span>string job<span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token operator">-&gt;</span>job <span class="token operator">=</span> job<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Employee的构造函数&quot;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">showEmployee</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">showPerson</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;job:&quot;</span><span class="token operator">&lt;&lt;</span>job<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">StudentHasJob</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Student</span><span class="token punctuation">,</span><span class="token keyword">public</span> <span class="token class-name">Employee</span>         <span class="token comment">//继承了Student和Employee</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">StudentHasJob</span><span class="token punctuation">(</span>string name<span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">,</span><span class="token keyword">char</span> gender<span class="token punctuation">,</span>string job<span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">Student</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>n<span class="token punctuation">,</span>gender<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">Employee</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>n<span class="token punctuation">,</span>job<span class="token punctuation">)</span>       <span class="token comment">//依次对基类进行初始化</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;StudentHasJob的构造函数&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">showStudentHasJob</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">showStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span>jod<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    StudentHasJob <span class="token function">s</span><span class="token punctuation">(</span><span class="token string">&quot;Jack&quot;</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token char">'H'</span><span class="token punctuation">,</span><span class="token string">&quot;工程师&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s<span class="token punctuation">.</span><span class="token function">showStudentHasJob</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+输出结果：
+    Person的构造函数
+    Student的构造函数
+    Person的构造函数
+    Employee的构造函数
+    StudentHasJob的构造函数
+    name<span class="token operator">:</span>Jack
+    age<span class="token operator">:</span><span class="token number">20</span>
+    gender<span class="token operator">:</span>H
+    工程师
+<span class="token comment">//在主函数中创建s对象时，会调用Student的构造和Employee的构造（因为StudentHasJob继承了他俩，在初始化时调用了他们的构造函数），又因为二者均继承了Person，所以又会调用Person的构造，所以Person先被调用，且调用了两次</span>
+</code></pre></div><p><strong>例2</strong>:（<u>为了不使Person的构造函数调用两次，所以用virtual</u>）</p> <div class="language-cpp extra-class"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Person</span>           <span class="token comment">//基类</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span><span class="token operator">:</span>
+    string name<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Person</span><span class="token punctuation">(</span>string name<span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token operator">-&gt;</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token operator">-&gt;</span>age <span class="token operator">=</span> n<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Person的构造函数&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>   <span class="token comment">//在构造函数中添加输出语句，方便查看调用顺序</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">showPerson</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;name:&quot;</span><span class="token operator">&lt;&lt;</span>name<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;age:&quot;</span><span class="token operator">&lt;&lt;</span>age<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Student</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">virtual</span> <span class="token keyword">public</span> <span class="token class-name">Person</span>         <span class="token comment">//定义虚基类,继承Person</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span><span class="token operator">:</span>
+    <span class="token keyword">char</span> gender<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">STudent</span><span class="token punctuation">(</span>string name<span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">,</span><span class="token keyword">char</span> gender<span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>age<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token operator">-&gt;</span>gender <span class="token operator">=</span> gender<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Student的构造函数&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">showStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">showPerson</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;gender:&quot;</span><span class="token operator">&lt;&lt;</span>gender<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Employee</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">virtual</span> <span class="token keyword">public</span> <span class="token class-name">Person</span>          <span class="token comment">//定义虚基类，继承Person</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span><span class="token operator">:</span>
+    string job<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Employee</span><span class="token punctuation">(</span>string name<span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">,</span>string job<span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token operator">-&gt;</span>job <span class="token operator">=</span> job<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Employee的构造函数&quot;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">showEmployee</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">showPerson</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;job:&quot;</span><span class="token operator">&lt;&lt;</span>job<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">StudentHasJob</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Student</span><span class="token punctuation">,</span><span class="token keyword">public</span> <span class="token class-name">Employee</span>         <span class="token comment">//继承了Student和Employee</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">StudentHasJob</span><span class="token punctuation">(</span>string name<span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">,</span><span class="token keyword">char</span> gender<span class="token punctuation">,</span>string job<span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">Student</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>n<span class="token punctuation">,</span>gender<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">Employee</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>n<span class="token punctuation">,</span>job<span class="token punctuation">)</span>，<span class="token function">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>n<span class="token punctuation">)</span>       <span class="token comment">//依次对基类进行初始化,还需添加Person的构造函数</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;StudentHasJob的构造函数&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">showStudentHasJob</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">showStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span>jod<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    StudentHasJob <span class="token function">s</span><span class="token punctuation">(</span><span class="token string">&quot;Jack&quot;</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token char">'H'</span><span class="token punctuation">,</span><span class="token string">&quot;工程师&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s<span class="token punctuation">.</span><span class="token function">showStudentHasJob</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+输出结果：
+    Person的构造函数
+    Student的构造函数
+    Employee的构造函数
+    StudentHasJob的构造函数
+    name<span class="token operator">:</span>Jack
+    age<span class="token operator">:</span><span class="token number">20</span>
+    gender<span class="token operator">:</span>H
+    工程师
+<span class="token comment">//Person的构造函数只被调用了一次</span>
+</code></pre></div><p><u>解决了派生类对象中基类对象存在多个副本的问题</u></p> <h3 id="_3-赋值兼容规则"><a href="#_3-赋值兼容规则" class="header-anchor">#</a> （3）赋值兼容规则</h3> <ul><li>基类对象可以赋值给基类对象，也可以把派生类对象赋值给基类对象</li> <li>基类指针可以指向基类对象，也可以指向派生类对象</li> <li>基类引用可以指向基类对象，也可以指向派生类对象</li></ul> <p><strong>例</strong>:</p> <div class="language-cpp extra-class"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Shape</span>         <span class="token comment">//基类</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x<span class="token punctuation">,</span>y<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Shape</span><span class="token punctuation">(</span><span class="token keyword">int</span> xx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token keyword">int</span> yy <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        x <span class="token operator">=</span> xx<span class="token punctuation">;</span>
+        y <span class="token operator">=</span> yy<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;圆形的中心点是：&quot;</span><span class="token operator">&lt;&lt;</span><span class="token string">&quot;(&quot;</span><span class="token operator">&lt;&lt;</span>x<span class="token operator">&lt;&lt;</span><span class="token string">&quot;,&quot;</span><span class="token operator">&lt;&lt;</span>y<span class="token operator">&lt;&lt;</span><span class="token string">&quot;)&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">Area</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;不知道什么图形，不知道面积&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Circle</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Shape</span>         <span class="token comment">//派生类</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> radius<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Circle</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span><span class="token keyword">int</span> y<span class="token punctuation">,</span><span class="token keyword">int</span> r<span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">Shape</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        radius <span class="token operator">=</span> r<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;该图形是圆&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token class-name">Shape</span><span class="token double-colon punctuation">::</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">Area</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;圆的面积是：&quot;</span><span class="token operator">&lt;&lt;</span><span class="token number">3.14</span><span class="token operator">*</span>radius<span class="token operator">*</span>radius<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Shape s1<span class="token punctuation">,</span><span class="token function">s2</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//建立了两个基类的对象s1和s2</span>
+    s1 <span class="token operator">=</span> s2<span class="token punctuation">;</span><span class="token comment">//同一类型的对象可以赋值</span>
+    s1<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Circle <span class="token function">c</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//建立了一个对象圆，中心点在（30,30），半径是8</span>
+    s1 <span class="token operator">=</span> c<span class="token punctuation">;</span><span class="token comment">//基类的对象等于派生类的对象</span>
+    s1<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+    Shape <span class="token operator">*</span>s3 <span class="token operator">=</span> <span class="token operator">&amp;</span>s2<span class="token punctuation">;</span><span class="token comment">//基类的指针指向基类的对象</span>
+    s3<span class="token operator">-&gt;</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Shape <span class="token operator">*</span>s4 <span class="token operator">=</span> <span class="token operator">&amp;</span>c<span class="token punctuation">;</span><span class="token comment">//基类的指针指向派生类的对象</span>
+    s4<span class="token operator">-&gt;</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Shape <span class="token operator">&amp;</span>s5 <span class="token operator">=</span> s2<span class="token punctuation">;</span><span class="token comment">//基类的引用指向基类的对象</span>
+    s5<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Shape <span class="token operator">&amp;</span>s6 <span class="token operator">=</span> c<span class="token punctuation">;</span><span class="token comment">//基类的引用等于派生类的对象</span>
+    s6<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//但是</span>
+    <span class="token comment">//? s6.Area();   //输出“不知道什么图形，不知道面积”，而不是圆的面积</span>
+<span class="token punctuation">}</span>
+输出结果：
+    圆形的中心点是：（<span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span>）
+    圆形的中心点是：（<span class="token number">30</span><span class="token punctuation">,</span><span class="token number">30</span>）
+    圆形的中心点是：（<span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span>）
+    圆形的中心点是：（<span class="token number">30</span><span class="token punctuation">,</span><span class="token number">30</span>）
+    圆形的中心点是：（<span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span>）
+    圆形的中心点是：（<span class="token number">30</span><span class="token punctuation">,</span><span class="token number">30</span>）
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新时间：:</span> <span class="time">2/9/2025, 9:12:58 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/computer/cpp/10.html" class="prev">
+        运算符重载
+      </a></span> <span class="next"><a href="/computer/cpp/12.html">
+        虚函数与多态性
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.08520993.js" defer></script><script src="/assets/js/2.af4697f0.js" defer></script><script src="/assets/js/1.f36702a6.js" defer></script><script src="/assets/js/34.11fb6233.js" defer></script>
+  </body>
+</html>
