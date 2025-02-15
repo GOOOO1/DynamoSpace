@@ -21,11 +21,12 @@ module.exports = {
                 items: [
                     { text: 'C++', link: '/computer/cpp/'},
                     { text: '数据结构', link: '/computer/data-structure/'},
+                    { text: 'STL', link: '/computer/STL/'},
                 ]
             },
         ],
 
-        sidebar: { // C++部分
+        sidebar: {
             '/computer/cpp/': [
                 {
                     title: 'C++',
@@ -61,6 +62,26 @@ module.exports = {
                     ]
                 }
             ],
+            '/computer/STL/': [
+                {
+                    title: 'STL',
+                    path: '/computer/STL/',
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: [
+                        '/computer/STL/vector.html',
+                        '/computer/STL/stack.html',
+                        '/computer/STL/queue.html',
+                        '/computer/STL/priority_queue.html',
+                        '/computer/STL/set.html',
+                        '/computer/STL/map.html',
+                        '/computer/STL/string.html',
+                        '/computer/STL/pair.html',
+                        '/computer/STL/iterator.html',
+                        '/computer/STL/algorithms.html',
+                    ]
+                }
+            ]
         },
 
     }
