@@ -54,7 +54,7 @@ printf("%s", s.c_str());
 | 取子串                 | `.substr(起始下标, 子串长度)` | `string sub = s.substr(2, 10);` |
 | 查找子串               | `.find(待查串)`               | `s.find("abc");`                |
 | 转换为整型             | `stoi()`                      | `int x = stoi(s);`              |
-| 转换为长整型           | `stoli()`                     | l`long int x = stoli(s);`       |
+| 转换为长整型           | `stoli()`                     | `long int x = stoli(s);`       |
 | 转换为double           | `stod()`                      | `double x = stoll(s);`          |
 | …                      | …                             | …                               |
 | 将其他类型转换为字符串 | `to_string()`                 | `string s = to_string(x);`      |
