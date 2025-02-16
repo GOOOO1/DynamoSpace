@@ -3,11 +3,22 @@
 module.exports = {
     //base: '/DynamoSpace/',
     title: "满满Dynamo",
+
+    extendMarkdown(md) {
+        md.set({ html: true }); // 启用HTML支持
+        md.use(require('markdown-it-katex')); // 使用markdown-it-katex插件
+      },
+
     head: [
         ['meta', { name: 'author', content: '满满Dynamo'}],
         ['meta', { name: '联系方式', content: 'QQ:2970513337,wx:y19986209969'}],
         ['link', { rel: 'icon', href: '/img/chong.png'}],
+        ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css' }], // 引入KaTeX的CSS样式
     ],
+
+    markdown: {
+        lineNumbers: true,
+    },
 
     themeConfig: {
         logo: '/img/chong.png',
