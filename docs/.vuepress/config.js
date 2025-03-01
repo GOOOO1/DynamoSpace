@@ -35,6 +35,13 @@ module.exports = {
                     { text: 'STL', link: '/computer/STL/'},
                 ]
             },
+            {
+                text: '前端',
+                items: [
+                    { text: 'HTML5', link: '/Web/HTML5/'},
+                    { text: 'CSS', link: '/Web/CSS'},
+                ]
+            },
         ],
 
         sidebar: {
@@ -92,7 +99,34 @@ module.exports = {
                         '/computer/STL/algorithms.html',
                     ]
                 }
-            ]
+            ],
+            '/Web/HTML5/': [
+                {
+                    title: 'HTML5介绍',
+                    path: '/Web/HTML5/',
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: [
+                        '/Web/HTML5/title.html',
+                        '/Web/HTML5/P-T-W-HL.html',
+                        '/Web/HTML5/photo.html',
+                        '/Web/HTML5/hyperlink.html',
+                        '/Web/HTML5/list.html',
+                        '/Web/HTML5/table.html',
+                        '/Web/HTML5/form.html',
+                        '/Web/HTML5/block-inline-elements.html',
+                        '/Web/HTML5/add-tag.html',
+                    ]
+                }
+            ],
+            '/Web/CSS/': [
+                {
+                    title: 'CSS',
+                    path: '/Web/CSS/',
+                    collapsable: false,
+                    sidebarDepth: 2,
+                }
+            ],
         },
 
     }
