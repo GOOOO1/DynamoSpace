@@ -39,7 +39,7 @@ module.exports = {
                 text: '前端',
                 items: [
                     { text: 'HTML5', link: '/Web/HTML5/'},
-                    { text: 'CSS', link: '/Web/CSS'},
+                    { text: 'CSS', link: '/Web/CSS/'},
                 ]
             },
         ],
@@ -125,6 +125,13 @@ module.exports = {
                     path: '/Web/CSS/',
                     collapsable: false,
                     sidebarDepth: 2,
+                    children: [
+                        '/Web/CSS/import.html',
+                        '/Web/CSS/selector.html',
+                        '/Web/CSS/relation-selector.html',
+                        '/Web/CSS/property.html',
+                        '/Web/CSS/box-model.html',
+                    ]
                 }
             ],
         },
