@@ -18,7 +18,7 @@ title: HTML5新增标签
 
   <u>div实现</u>：
 
-  ![QQ20250301-223508](/docs/.vuepress/public/img/HTML4.png)
+  ![QQ20250301-223508](/img/HTML4.png)
 
   ```html
   <!DOCTYPE html>
@@ -43,7 +43,7 @@ title: HTML5新增标签
 
   <u>H5新标签实现</u>：
 
-  ![QQ20250301-223954](/docs/.vuepress/public/img/HTML5.png)
+  ![QQ20250301-223954](/img/HTML5.png)
 
   ```html
   <!DOCTYPE html>
