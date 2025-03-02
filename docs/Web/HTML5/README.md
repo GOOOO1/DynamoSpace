@@ -4,7 +4,7 @@ title: HTML5
 
 # HTML5介绍
 
-**（更详细的内容参考[https://developer.mozilla.org/zh-CN/docs/Web/HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)，此内容仅为一个简单的初学笔记）**
+**（更详细的内容参考[https://developer.mozilla.org/zh-CN/docs/Web/HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)，此内容仅为一个简单的笔记）**
 
 HTML5是用来描述网页的一种语言，被称为超文本标记语言。用HTML5编写的文件，后缀以`.html`结尾
 
@@ -25,7 +25,7 @@ DOCTYPE是document type（文档类型）的缩写。`<!DOCTYPE html>`是H5的�
 <!DOCTYPE html>
 ```
 
-![HTML5的DOCTYPE声明](/docs/.vuepress/public/img/HTML1.png)
+![HTML5的DOCTYPE声明](/img/HTML1.png)
 
 >VSCode中的空html文件里，输入`!`后回车，可自动补全代码
 
@@ -33,7 +33,7 @@ DOCTYPE是document type（文档类型）的缩写。`<!DOCTYPE html>`是H5的�
 
 ## HTML5基本骨架
 
-![HTML5基本骨架](/docs/.vuepress/public/img/HTML2.png)
+![HTML5基本骨架](/img/HTML2.png)
 
 
 
