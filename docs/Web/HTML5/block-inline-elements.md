@@ -10,7 +10,7 @@ HTML5出现之前，经常把元素按照块级元素和内联元素来区分。
 
 ![HTML5元素区分方式](/img/HTML3.png)
 
-**HTML5中此内容详细参考地址：https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/content_categories**
+**HTML5中此内容详细参考地址：[https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/content_categories](https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/content_categories)**
 
 虽然到了HTML5的版本，元素分类更细致了，但是对于初学者并不友好，所以以下是按照块元素和内联元素做的区分。
 
