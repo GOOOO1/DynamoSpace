@@ -8,7 +8,7 @@ title: 块元素与行内元素（内联元素）
 
 HTML5出现之前，经常把元素按照块级元素和内联元素来区分。在HTML5中，元素不再按照这种方式来区分，而是按照内容模型来区分，分为元数据型（metadata content）、区块型（sectioning content）、标题型（heading content）、文档流型（flow content）、语句型（phrasing content）、内嵌型（embedded content）、交互型（interactive content）。元素不属于任何一个类别，被称为穿透的，元素可能属于不止一个类别，称为混合的。
 
-![HTML5元素区分方式](/docs/.vuepress/public/img/HTML3.png)
+![HTML5元素区分方式](/img/HTML3.png)
 
 **HTML5中此内容详细参考地址：https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/content_categories**
 
