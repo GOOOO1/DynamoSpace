@@ -131,6 +131,13 @@ module.exports = {
                         '/Web/CSS/relation-selector.html',
                         '/Web/CSS/property.html',
                         '/Web/CSS/box-model.html',
+                        '/Web/CSS/elastic.html',
+                        '/Web/CSS/float.html',
+                        '/Web/CSS/position.html',
+                        '/Web/CSS/new-character.html',
+                        '/Web/CSS/meta.html',
+                        '/Web/CSS/sprite.md',
+                        '/Web/CSS/iconfont.html',
                     ]
                 }
             ],
