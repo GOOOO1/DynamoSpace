@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>虚函数与多态性 | 满满Dynamo</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/img/chong.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+    <meta name="description" content="">
+    <meta name="author" content="满满Dynamo">
+    <meta name="联系方式" content="QQ:2970513337,wx:y19986209969">
+    
+    <link rel="preload" href="/assets/css/0.styles.6b880b11.css" as="style"><link rel="preload" href="/assets/js/app.28029b02.js" as="script"><link rel="preload" href="/assets/js/2.bd192099.js" as="script"><link rel="preload" href="/assets/js/1.f397bb8f.js" as="script"><link rel="preload" href="/assets/js/71.ee08f761.js" as="script"><link rel="prefetch" href="/assets/js/10.2ad50ffa.js"><link rel="prefetch" href="/assets/js/11.4c688a98.js"><link rel="prefetch" href="/assets/js/12.e21a75c9.js"><link rel="prefetch" href="/assets/js/13.9df14d70.js"><link rel="prefetch" href="/assets/js/14.f0ea81a2.js"><link rel="prefetch" href="/assets/js/15.a9ce8f8e.js"><link rel="prefetch" href="/assets/js/16.0290022d.js"><link rel="prefetch" href="/assets/js/17.c6f172fb.js"><link rel="prefetch" href="/assets/js/18.d56f3b61.js"><link rel="prefetch" href="/assets/js/19.9e757d30.js"><link rel="prefetch" href="/assets/js/20.1f12ca22.js"><link rel="prefetch" href="/assets/js/21.078a1583.js"><link rel="prefetch" href="/assets/js/22.3cdad8a0.js"><link rel="prefetch" href="/assets/js/23.b5c8359e.js"><link rel="prefetch" href="/assets/js/24.3e9510ec.js"><link rel="prefetch" href="/assets/js/25.3d94a1b5.js"><link rel="prefetch" href="/assets/js/26.3b6e9201.js"><link rel="prefetch" href="/assets/js/27.37b83962.js"><link rel="prefetch" href="/assets/js/28.667f2751.js"><link rel="prefetch" href="/assets/js/29.10df11a7.js"><link rel="prefetch" href="/assets/js/3.14dd53b9.js"><link rel="prefetch" href="/assets/js/30.8a898978.js"><link rel="prefetch" href="/assets/js/31.6c5df631.js"><link rel="prefetch" href="/assets/js/32.ce22de2d.js"><link rel="prefetch" href="/assets/js/33.37f28de4.js"><link rel="prefetch" href="/assets/js/34.ed85114d.js"><link rel="prefetch" href="/assets/js/35.df39713f.js"><link rel="prefetch" href="/assets/js/36.a8bb02a9.js"><link rel="prefetch" href="/assets/js/37.d2822682.js"><link rel="prefetch" href="/assets/js/38.7dd0708f.js"><link rel="prefetch" href="/assets/js/39.be07bab7.js"><link rel="prefetch" href="/assets/js/4.d18ce1d1.js"><link rel="prefetch" href="/assets/js/40.75e85625.js"><link rel="prefetch" href="/assets/js/41.0d362ca3.js"><link rel="prefetch" href="/assets/js/42.19dd23d5.js"><link rel="prefetch" href="/assets/js/43.574ca40b.js"><link rel="prefetch" href="/assets/js/44.fc1c0d7b.js"><link rel="prefetch" href="/assets/js/45.10f45138.js"><link rel="prefetch" href="/assets/js/46.9adb9903.js"><link rel="prefetch" href="/assets/js/47.045f82a1.js"><link rel="prefetch" href="/assets/js/48.be667b94.js"><link rel="prefetch" href="/assets/js/49.e044a5f2.js"><link rel="prefetch" href="/assets/js/5.5ebaaa95.js"><link rel="prefetch" href="/assets/js/50.32277c70.js"><link rel="prefetch" href="/assets/js/51.27ff15f6.js"><link rel="prefetch" href="/assets/js/52.8acfb7ab.js"><link rel="prefetch" href="/assets/js/53.4bcaecf9.js"><link rel="prefetch" href="/assets/js/54.4cf7f5b2.js"><link rel="prefetch" href="/assets/js/55.b059c03c.js"><link rel="prefetch" href="/assets/js/56.2dd4250d.js"><link rel="prefetch" href="/assets/js/57.7380c2f2.js"><link rel="prefetch" href="/assets/js/58.1b548d0a.js"><link rel="prefetch" href="/assets/js/59.4987656f.js"><link rel="prefetch" href="/assets/js/6.31e26b8e.js"><link rel="prefetch" href="/assets/js/60.9700471e.js"><link rel="prefetch" href="/assets/js/61.1194bd45.js"><link rel="prefetch" href="/assets/js/62.9c579590.js"><link rel="prefetch" href="/assets/js/63.3b083396.js"><link rel="prefetch" href="/assets/js/64.7efe1ab4.js"><link rel="prefetch" href="/assets/js/65.58f27ef6.js"><link rel="prefetch" href="/assets/js/66.e4eb9dee.js"><link rel="prefetch" href="/assets/js/67.9926f3e8.js"><link rel="prefetch" href="/assets/js/68.9ee9a075.js"><link rel="prefetch" href="/assets/js/69.74334fd3.js"><link rel="prefetch" href="/assets/js/7.8fd49c65.js"><link rel="prefetch" href="/assets/js/70.0be66beb.js"><link rel="prefetch" href="/assets/js/72.a80da15a.js"><link rel="prefetch" href="/assets/js/73.ffe3ae88.js"><link rel="prefetch" href="/assets/js/74.ead2ac1b.js"><link rel="prefetch" href="/assets/js/75.64981a8a.js"><link rel="prefetch" href="/assets/js/76.73b8ff26.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.1f6d7e80.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6b880b11.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/chong.png" alt="满满Dynamo" class="logo"> <span class="site-name can-hide">满满Dynamo</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机" class="dropdown-title"><span class="title">Computer</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机" class="mobile-dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/computer/cpp/" class="nav-link router-link-active">
+  C++
+</a></li><li class="dropdown-item"><!----> <a href="/computer/data-structure/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/computer/STL/" class="nav-link">
+  STL
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Web/HTML5/" class="nav-link">
+  HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/Web/CSS3/" class="nav-link">
+  CSS3
+</a></li><li class="dropdown-item"><!----> <a href="/Web/JS/" class="nav-link">
+  JS
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机" class="dropdown-title"><span class="title">Computer</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机" class="mobile-dropdown-title"><span class="title">Computer</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/computer/cpp/" class="nav-link router-link-active">
+  C++
+</a></li><li class="dropdown-item"><!----> <a href="/computer/data-structure/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/computer/STL/" class="nav-link">
+  STL
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Web/HTML5/" class="nav-link">
+  HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/Web/CSS3/" class="nav-link">
+  CSS3
+</a></li><li class="dropdown-item"><!----> <a href="/Web/JS/" class="nav-link">
+  JS
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/computer/cpp/" class="sidebar-heading clickable router-link-active open"><span>C++</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/computer/cpp/01.html" class="sidebar-link">引用</a></li><li><a href="/computer/cpp/02.html" class="sidebar-link">函数</a></li><li><a href="/computer/cpp/03.html" class="sidebar-link">异常处理机制</a></li><li><a href="/computer/cpp/04.html" class="sidebar-link">类和对象</a></li><li><a href="/computer/cpp/05.html" class="sidebar-link">模板</a></li><li><a href="/computer/cpp/06.html" class="sidebar-link">new和delete</a></li><li><a href="/computer/cpp/07.html" class="sidebar-link">this指针</a></li><li><a href="/computer/cpp/08.html" class="sidebar-link">const关键字</a></li><li><a href="/computer/cpp/09.html" class="sidebar-link">static</a></li><li><a href="/computer/cpp/10.html" class="sidebar-link">运算符重载</a></li><li><a href="/computer/cpp/11.html" class="sidebar-link">继承</a></li><li><a href="/computer/cpp/12.html" aria-current="page" class="active sidebar-link">虚函数与多态性</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/computer/cpp/12.html#_1-多态性概述" class="sidebar-link">1. 多态性概述</a></li><li class="sidebar-sub-header"><a href="/computer/cpp/12.html#_2-虚函数" class="sidebar-link">2. 虚函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/computer/cpp/12.html#虚析构函数" class="sidebar-link">虚析构函数</a></li></ul></li><li class="sidebar-sub-header"><a href="/computer/cpp/12.html#_3-纯虚函数和抽象类" class="sidebar-link">3. 纯虚函数和抽象类</a></li></ul></li><li><a href="/computer/cpp/13.html" class="sidebar-link">标准模板库（STL）</a></li><li><a href="/computer/cpp/14.html" class="sidebar-link">文件流</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="十二-虚函数与多态性"><a href="#十二-虚函数与多态性" class="header-anchor">#</a> 十二. 虚函数与多态性</h1> <h2 id="_1-多态性概述"><a href="#_1-多态性概述" class="header-anchor">#</a> 1. 多态性概述</h2> <blockquote><p>指的是不同对象对于同样的消息会产生不同的行为</p></blockquote> <blockquote><p>而消息在C++语言中指的就是函数的调用，不同的函数可以具有多种不同的功能，而多态就是允许用同一个函数名的调用来实现不同的功能</p></blockquote> <p><strong>多态性的体现</strong></p> <p>C++ 允许将一个对象的指针赋值给它的父类指针变量。而当通过父类指针调用一个虚函数时，则会调用子类中<strong>最后被重写</strong>的那个版本，这样对于同一段通过指针调用某个虚函数的代码，就会因为实际指向的对象不同，而调用不同函数，这就是所谓的多态性。</p> <p>同理，通过引用调用一个虚函数，也会有这样的效果。</p> <p>按照实现的时机，多态可以分为<strong>两类</strong>：</p> <ul><li><p><strong>编译时多态</strong></p> <p>指的是在程序<u>编译</u>过程中决定同名操作与对象的绑定关系，也称为<strong>静态绑定</strong>，典型的技术有<u>函数重载、运算符重载、模板</u></p> <p><u>优点：</u>程序运行的时候函数调用速度快、效率较高</p> <p><u>缺点：</u>编程不够灵活</p></li> <li><p><strong>运行时多态</strong></p> <p>指的是在程序<u>运行</u>过程中<u>动态</u>地确定同名操作与具体对象的绑定关系，也称为<strong>动态绑定</strong>，主要通过<u>使用继承和虚函数</u>来实现</p> <p>在编译、连接过程中不确定绑定关系，程序运行之后才确定</p> <p><u>优点：</u>编程更加灵活、系统易于扩展</p> <p><u>缺点：</u>比静态绑定的函数调用速度慢些</p> <p><strong><u>实现条件：</u></strong></p> <ol><li>有虚函数</li> <li>符合赋值兼容规则</li> <li>由指针或引用去调用虚函数</li></ol></li></ul> <h2 id="_2-虚函数"><a href="#_2-虚函数" class="header-anchor">#</a> 2. 虚函数</h2> <p><strong>格式：</strong><code>class 类名</code></p> <p>​           <code>{ … …</code></p> <p>​           <code>virtual 类型 成员函数名（参数表）; }</code></p> <p>​           <code>… … };</code></p> <p><strong>虚函数必须存在于类的继承环境之中才有意义</strong></p> <p>虚函数在继承机制下具有<u>向下传递性</u>，即基类的某类函数是虚函数，则派生类的该类函数也是虚函数（不写virtual也是），比如基类析构函数是虚函数，那么派生类析构函数也是虚函数</p> <p>继续用上一章最后一个例子，从<u>上章中该例</u>中的输出结果中可以看出：<u>不管基类的对象、指针、引用指向的是基类对象还是派生类对象</u>，最后的show函数调用的都是基类中的show函数，没有调用过派生类中的</p> <p><strong>修改</strong>:</p> <p><u>在shape类和circle类的show和Area函数的首部类型前<strong>加virtual</strong>，变为虚函数</u>。主函数如下：</p> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Shape s1<span class="token punctuation">,</span><span class="token function">s2</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//建立了两个基类的对象s1和s2</span>
+    s1 <span class="token operator">=</span> s2<span class="token punctuation">;</span><span class="token comment">//同一类型的对象可以赋值</span>
+    s1<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Circle <span class="token function">c</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//建立了一个对象圆，中心点在（30,30），半径是8</span>
+    s1 <span class="token operator">=</span> c<span class="token punctuation">;</span><span class="token comment">//基类的对象等于派生类的对象</span>
+    s1<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+    Shape <span class="token operator">*</span>s3 <span class="token operator">=</span> <span class="token operator">&amp;</span>s2<span class="token punctuation">;</span><span class="token comment">//基类的指针指向基类的对象</span>
+    s3<span class="token operator">-&gt;</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;---------------------------&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    Shape <span class="token operator">*</span>s4 <span class="token operator">=</span> <span class="token operator">&amp;</span>c<span class="token punctuation">;</span><span class="token comment">//基类的指针指向派生类的对象</span>
+    s4<span class="token operator">-&gt;</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s4<span class="token operator">-&gt;</span><span class="token function">Area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Shape <span class="token operator">&amp;</span>s5 <span class="token operator">=</span> s2<span class="token punctuation">;</span><span class="token comment">//基类的引用指向基类的对象</span>
+    s5<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Shape <span class="token operator">&amp;</span>s6 <span class="token operator">=</span> c<span class="token punctuation">;</span><span class="token comment">//基类的引用等于派生类的对象</span>
+    s6<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s6<span class="token punctuation">.</span><span class="token function">Area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   
+<span class="token punctuation">}</span>
+输出结果：
+    圆形的中心点是：（<span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span>）
+    圆形的中心点是：（<span class="token number">30</span><span class="token punctuation">,</span><span class="token number">30</span>）
+    圆形的中心点是：（<span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span>）
+    <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+    该图形是圆<span class="token comment">//调用的是circle的函数</span>
+    圆形的中心点是：（<span class="token number">30</span><span class="token punctuation">,</span><span class="token number">30</span>）
+    圆的面积是<span class="token number">200.96</span>
+    圆形的中心点是：（<span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span>）
+    该图形是圆
+    圆形的中心点是：（<span class="token number">30</span><span class="token punctuation">,</span><span class="token number">30</span>）
+    圆的面积是<span class="token number">200.96</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><h3 id="虚析构函数"><a href="#虚析构函数" class="header-anchor">#</a> 虚析构函数</h3> <p><u>构造函数</u><strong>不能</strong>声明为虚函数，因为在执行构造函数时，对象还没有完成建立，谈不上函数与对象的绑定</p> <ul><li>如果将基类的析构函数声明为虚函数时，由该基类所派生的所有派生类的析构函数也都自动成为虚函数</li> <li>专业人员一般都习惯声明虚析构函数，即使基类并不需要析构函数，也显示地定义一个函数体为空的虚析构函数，<u>以保证在撤销动态分配空间时能得到正确的处理</u></li></ul> <p><strong>例</strong>:</p> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Base</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span>pBase<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Base</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        pBase <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Construct Base.&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">~</span><span class="token function">Base</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">delete</span> pBase<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Deconstruct Base.&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Derived</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Base</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>pDerived<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Derived</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        pDerived <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">char</span><span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Construct Derived.&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">~</span><span class="token function">Derived</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">delete</span> pDerived<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Deconstruct Derived.&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Base <span class="token operator">*</span>pb<span class="token punctuation">;</span><span class="token comment">//定义基类指针</span>
+    pb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Derived</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//基类指针指向新生成的派生类堆对象</span>
+    <span class="token keyword">delete</span> pb<span class="token punctuation">;</span><span class="token comment">//释放对象</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+输出结果：
+    Construct Base<span class="token punctuation">.</span>
+    Construct Derived<span class="token punctuation">.</span>
+    Deconstruct Base<span class="token punctuation">.</span>
+<span class="token comment">//只析构了Base，没有析构Derived，因为pb指针是Base类型，所以调用Base的析构函数</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br></div></div><p><strong>改</strong>:</p> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Base</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span>pBase<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Base</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        pBase <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Construct Base.&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">virtual</span> <span class="token operator">~</span><span class="token function">Base</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//虚析构函数</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">delete</span> pBase<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Deconstruct Base.&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Derived</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Base</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>pDerived<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Derived</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        pDerived <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">char</span><span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Construct Derived.&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">virtual</span> <span class="token operator">~</span><span class="token function">Derived</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//虚析构函数,子类可以是虚析构函数，也可以不是</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">delete</span> pDerived<span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Deconstruct Derived.&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Base <span class="token operator">*</span>pb<span class="token punctuation">;</span><span class="token comment">//定义基类指针</span>
+    pb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Derived</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//基类指针指向新生成的派生类堆对象</span>
+    <span class="token keyword">delete</span> pb<span class="token punctuation">;</span><span class="token comment">//释放对象</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+输出结果：
+    Construct Base<span class="token punctuation">.</span>
+    Construct Derived<span class="token punctuation">.</span>
+    Deconstruct Derived<span class="token punctuation">.</span>
+    Deconstruct Base<span class="token punctuation">.</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br></div></div><h2 id="_3-纯虚函数和抽象类"><a href="#_3-纯虚函数和抽象类" class="header-anchor">#</a> 3. 纯虚函数和抽象类</h2> <p>纯虚函数定义<strong>格式：</strong><code>virtual 类型 函数名（）= 0;</code></p> <ul><li><strong>包含有纯虚函数的类是抽象类</strong></li> <li><strong>抽象类不能实例化</strong>，即不能定义对象</li> <li>抽象类派生出新的类之后，如果<u>派生类给出所有</u>纯虚函数的函数<u>实现</u>，这个派生类就<u>可以定义自己的对象</u>，因而不再是抽象类。反之，如果派生类没有给出全部纯虚函数的实现，这时的派生类仍然是一个抽象类</li></ul> <p><strong>例</strong>:</p> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Shape</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//虚函数</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;不知道怎么算面积&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Circle</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Shape</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> radius<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Circle</span><span class="token punctuation">(</span><span class="token keyword">int</span> r<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        radius <span class="token operator">=</span> r<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//重写父类area函数</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;area=&quot;</span><span class="token operator">&lt;&lt;</span><span class="token number">3.14</span><span class="token operator">*</span>radius<span class="token operator">*</span>radius<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Rectangle</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Shape</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> width<span class="token punctuation">,</span>height<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Rectangle</span><span class="token punctuation">(</span><span class="token keyword">int</span> w<span class="token punctuation">,</span><span class="token keyword">int</span> h<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        width <span class="token operator">=</span> w<span class="token punctuation">;</span>
+        height <span class="token operator">=</span> h<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//重写父类area函数</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;area=&quot;</span><span class="token operator">&lt;&lt;</span>width<span class="token operator">*</span>height<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">getArea</span><span class="token punctuation">(</span>Shape <span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token comment">//工具函数，调用传入的类指针，指向的计算面积的函数</span>
+<span class="token punctuation">{</span>
+    p<span class="token operator">-&gt;</span><span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Shape s<span class="token punctuation">;</span><span class="token comment">//此时Shape类不是抽象类，Area函数不是纯虚函数，可以实例化对象</span>
+    s<span class="token punctuation">.</span><span class="token function">Area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Circle <span class="token function">c</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Rectangle <span class="token function">r</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">getArea</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">getArea</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+输出结果：
+    不知道怎么算面积<span class="token comment">//此时可以看到基类中虚函数体里不需要内容</span>
+    area<span class="token operator">=</span><span class="token number">3.14</span>
+    area<span class="token operator">=</span><span class="token number">20</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br></div></div><p><strong>改</strong>:</p> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Shape</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token comment">//纯虚函数,为了提供统一接口，实现多态</span>
+    
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Circle</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Shape</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> radius<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Circle</span><span class="token punctuation">(</span><span class="token keyword">int</span> r<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        radius <span class="token operator">=</span> r<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//重写父类纯虚函数</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;area=&quot;</span><span class="token operator">&lt;&lt;</span><span class="token number">3.14</span><span class="token operator">*</span>radius<span class="token operator">*</span>radius<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Rectangle</span><span class="token operator">:</span><span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Shape</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> width<span class="token punctuation">,</span>height<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Rectangle</span><span class="token punctuation">(</span><span class="token keyword">int</span> w<span class="token punctuation">,</span><span class="token keyword">int</span> h<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        width <span class="token operator">=</span> w<span class="token punctuation">;</span>
+        height <span class="token operator">=</span> h<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//重写父类纯虚函数</span>
+    <span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;area=&quot;</span><span class="token operator">&lt;&lt;</span>width<span class="token operator">*</span>height<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">getArea</span><span class="token punctuation">(</span>Shape <span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token comment">//工具函数，调用传入的类指针说指向的计算面积的函数</span>
+<span class="token punctuation">{</span>
+    p<span class="token operator">-&gt;</span><span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">//? Shape s;//此时Shape类是抽象类，Area函数是纯虚函数，不可以实例化对象</span>
+    <span class="token comment">//? s.Area();</span>
+    Circle <span class="token function">c</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Rectangle <span class="token function">r</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">getArea</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">getArea</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+输出结果：
+    area<span class="token operator">=</span><span class="token number">3.14</span>
+    area<span class="token operator">=</span><span class="token number">20</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新时间：:</span> <span class="time">2/9/2025, 9:12:58 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/computer/cpp/11.html" class="prev">
+        继承
+      </a></span> <span class="next"><a href="/computer/cpp/13.html">
+        标准模板库（STL）
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.28029b02.js" defer></script><script src="/assets/js/2.bd192099.js" defer></script><script src="/assets/js/1.f397bb8f.js" defer></script><script src="/assets/js/71.ee08f761.js" defer></script>
+  </body>
+</html>
