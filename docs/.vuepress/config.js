@@ -39,7 +39,8 @@ module.exports = {
                 text: '前端',
                 items: [
                     { text: 'HTML5', link: '/Web/HTML5/'},
-                    { text: 'CSS', link: '/Web/CSS/'},
+                    { text: 'CSS3', link: '/Web/CSS3/'},
+                    { text: 'JS', link: '/Web/JS/'},
                 ]
             },
         ],
@@ -119,29 +120,39 @@ module.exports = {
                     ]
                 }
             ],
-            '/Web/CSS/': [
+            '/Web/CSS3/': [
                 {
-                    title: 'CSS',
-                    path: '/Web/CSS/',
+                    title: 'CSS3',
+                    path: '/Web/CSS3/',
                     collapsable: false,
                     sidebarDepth: 2,
                     children: [
-                        '/Web/CSS/import.html',
-                        '/Web/CSS/selector.html',
-                        '/Web/CSS/relation-selector.html',
-                        '/Web/CSS/property.html',
-                        '/Web/CSS/box-model.html',
-                        '/Web/CSS/elastic.html',
-                        '/Web/CSS/float.html',
-                        '/Web/CSS/position.html',
-                        '/Web/CSS/new-character.html',
-                        '/Web/CSS/meta.html',
-                        '/Web/CSS/sprite.md',
-                        '/Web/CSS/iconfont.html',
+                        '/Web/CSS3/import.html',
+                        '/Web/CSS3/selector.html',
+                        '/Web/CSS3/relation-selector.html',
+                        '/Web/CSS3/property.html',
+                        '/Web/CSS3/box-model.html',
+                        '/Web/CSS3/elastic-box.html',
+                        '/Web/CSS3/float.html',
+                        '/Web/CSS3/position.html',
+                        '/Web/CSS3/new-character.html',
+                        '/Web/CSS3/meta.html',
+                        '/Web/CSS3/sprite.html',
+                        '/Web/CSS3/iconfont.html',
                     ]
                 }
             ],
+            '/Web/JS/': [
+                {
+                    title: "JS",
+                    path: '/Web/JS/',
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: [
+                        '/Web/JS/1.html',
+                    ]
+                }
+            ]
         },
-
     }
 }
